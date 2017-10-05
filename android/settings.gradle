@@ -1,0 +1,3 @@
+rootProject.name = 'phulki_app'
+
+include ':app'
