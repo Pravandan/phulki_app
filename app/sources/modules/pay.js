@@ -13,7 +13,7 @@ export class Pay extends Component<{}> {
   constructor(props){
     super(props);
     this.state = {
-        paymentDone : true,
+        paymentDone : false,
         pan     : new Animated.ValueXY()   //Step 1
     };
 
@@ -41,19 +41,29 @@ export class Pay extends Component<{}> {
 
   // Calculate the transform property and set it as a value for our style which we add below to the Animated.View component
   let imageStyle = {transform: [{translateX}, {translateY}]};
+
+
     return (
 
-      <View>  
+      <View style={{flex:1}}>  
        {!this.state.paymentDone&&
+          <View>
+
+         <Text style={{top:72,fontSize:16,color:'#333'}}>Big Bazaar is requesting payment</Text>
+        <Text style={{top:80,fontSize:16,color:'#333',textAlign:'center'}}>Rs. 5000</Text>
+
+
+          <View style={{flex:1,alignItems:'center'}}> 
+
            <Animated.View 
         {...this.panResponder.panHandlers}
         style={[imageStyle, styles.circle]}
         >
                     
-                    <Text style={{marginTop   : 50,
+                    <Text style={{marginTop   : 32,
                                   marginLeft  : 5,
                                   marginRight : 5,
-                                  fontSize:24,
+                                  fontSize:20,
                                   textAlign   : 'center',
                                   color       : '#fff'
                     }}>
@@ -63,7 +73,19 @@ export class Pay extends Component<{}> {
                     </Text>
         
         </Animated.View>
+        </View>
+
+   
+
+        </View>
       
+       }
+       {this.state.paymentDone &&
+          <View style={{flex:1,alignItems:'center',top:124}}>
+            <Text style={{fontSize:24,color:'#12bc59',fontWeight:'bold'}}>SUCCESS</Text>
+            <Text style={{fontSize:16}}>You have paid at Big Bazaar</Text>
+            <Text style={{color:'#333'}}>Amount - Rs.5000</Text>
+          </View>
        }
       </View>
  
@@ -74,10 +96,12 @@ export class Pay extends Component<{}> {
 
 const styles = StyleSheet.create({
   circle: {
+
     backgroundColor     : '#1abc9c',
-                        width               : 144,
-                        height              : 144,
-                        borderRadius        : 72,
-                        top:120
+                        width               : 100,
+                        height              : 100,
+                        borderRadius        : 50,
+                        top:120,
+
   },
 });
