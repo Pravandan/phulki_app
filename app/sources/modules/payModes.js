@@ -19,13 +19,13 @@ export class PayModes extends Component<{}> {
 
   render() {
     return (
-      <View style={{flex:1,top:window.height-188,alignItems:'stretch',flexDirection:'row'}}>  
-        
-        <TouchableOpacity style={{flex:1,padding:24,backgroundColor:'#8d17b7',alignItems:'center'}}>
+      <View style={{flex:1,top:window.height-190,alignItems:'stretch',flexDirection:'row'}}>  
+      
+        <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#401f80',alignItems:'center',paddingTop:16}}>
             <Text style={{fontSize:16,color:'white',fontWeight:'bold'}}>REQUEST</Text>
         </TouchableOpacity>
-         <TouchableOpacity style={{flex:1,padding:24,backgroundColor:'#5417b7',alignItems:'center'}}>
-            <Text style={{fontSize:16,color:'white'}}>GO OFFLINE</Text>
+         <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#fc004f',alignItems:'center',paddingTop:16}}>
+            <Text style={{fontSize:16,color:'white',fontWeight:'bold'}}>GO OFFLINE</Text>
         </TouchableOpacity>
 
       </View>

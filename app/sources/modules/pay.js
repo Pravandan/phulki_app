@@ -49,7 +49,7 @@ export class Pay extends Component<{}> {
        {!this.state.paymentDone&&
           <View>
 
-         <Text style={{top:72,fontSize:16,color:'#333'}}>Big Bazaar is requesting payment</Text>
+         <Text style={{top:72,fontSize:16,color:'#333',textAlign:'center'}}>Big Bazaar is requesting payment</Text>
         <Text style={{top:80,fontSize:16,color:'#333',textAlign:'center'}}>Rs. 5000</Text>
 
 
@@ -60,12 +60,13 @@ export class Pay extends Component<{}> {
         style={[imageStyle, styles.circle]}
         >
                     
-                    <Text style={{marginTop   : 32,
+                    <Text style={{marginTop   : 25,
                                   marginLeft  : 5,
                                   marginRight : 5,
-                                  fontSize:20,
+                                  fontSize:18,
                                   textAlign   : 'center',
                                   color       : '#fff'
+                                  ,fontWeight:'bold'
                     }}>
 
                         PAY
@@ -97,10 +98,10 @@ export class Pay extends Component<{}> {
 const styles = StyleSheet.create({
   circle: {
 
-    backgroundColor     : '#1abc9c',
-                        width               : 100,
-                        height              : 100,
-                        borderRadius        : 50,
+    backgroundColor     : '#401f80',
+                        width               : 80,
+                        height              : 80,
+                        borderRadius        : 40,
                         top:120,
 
   },
