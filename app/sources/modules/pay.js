@@ -14,7 +14,8 @@ export class Pay extends Component<{}> {
     super(props);
     this.state = {
         paymentDone : false,
-        pan     : new Animated.ValueXY()   //Step 1
+        pan     : new Animated.ValueXY(),  //Step 1
+        paymentSuccess : false,
     };
 
     this.panResponder = PanResponder.create({    //Step 2
@@ -81,6 +82,11 @@ export class Pay extends Component<{}> {
         </View>
       
        }
+       {this.state.paymentSuccess &&
+        <View>
+          <Text>Transaction Successfull</Text>
+        </View>
+       }
        {this.state.paymentDone &&
           <View style={{flex:1,alignItems:'center',top:124}}>
             <Text style={{fontSize:24,color:'#12bc59',fontWeight:'bold'}}>SUCCESS</Text>
@@ -88,6 +94,7 @@ export class Pay extends Component<{}> {
             <Text style={{color:'#333'}}>Amount - Rs.5000</Text>
           </View>
        }
+
       </View>
  
     );

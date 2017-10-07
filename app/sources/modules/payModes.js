@@ -21,7 +21,7 @@ export class PayModes extends Component<{}> {
     return (
       <View style={{flex:1,top:window.height-190,alignItems:'stretch',flexDirection:'row'}}>  
       
-        <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#401f80',alignItems:'center',paddingTop:16}}>
+        <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#fc004f',alignItems:'center',paddingTop:16}}>
             <Text style={{fontSize:16,color:'white',fontWeight:'bold'}}>REQUEST</Text>
         </TouchableOpacity>
          <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#fc004f',alignItems:'center',paddingTop:16}}>
