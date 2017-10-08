@@ -19,7 +19,7 @@ export class PayModes extends Component<{}> {
 
   render() {
     return (
-      <View style={{flex:1,top:window.height-190,alignItems:'stretch',flexDirection:'row'}}>  
+      <View style={{flex:1,top:window.height-186,alignItems:'stretch',flexDirection:'row'}}>  
       
         <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#fc004f',alignItems:'center',paddingTop:16}}>
             <Text style={{fontSize:16,color:'white',fontWeight:'bold'}}>REQUEST</Text>

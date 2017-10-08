@@ -22,9 +22,11 @@ export class Home extends Component<{}> {
     this.state={
       payMode : false,
       transacttionMode : false,
+      profileMode : false,
     }
     this.showPayMode = this.showPayMode.bind(this);
     this.showTransactionMode = this.showTransactionMode.bind(this);
+    this.showProfileMode = this.showProfileMode.bind(this);
   }
 
   static navigationOptions = {
@@ -35,15 +37,25 @@ export class Home extends Component<{}> {
   showPayMode(){
     this.setState({
       payMode : true,
-      transactionMode : false
+      transactionMode : false,
+      profileMode : false,
     });
   }
 
   showTransactionMode(){
     this.setState({
       payMode : false,
-      transactionMode : true
+      transactionMode : true,
+      profileMode : false
     });
+  }
+
+  showProfileMode(){
+    this.setState({
+      payMode : false,
+      transactionMode : false,
+      profileMode : true
+    })
   }
 
 
@@ -58,7 +70,7 @@ top:0,borderBottomColor:'#dddddd',backgroundColor:'#fc004f',
 
         {this.state.transactionMode &&
           
-          <Profile />
+          <Transaction />
           
         }
 
@@ -69,35 +81,40 @@ top:0,borderBottomColor:'#dddddd',backgroundColor:'#fc004f',
           </View>
         }
 
+        {this.state.profileMode &&
+
+          <Profile />
+
+        }
 
      
-        <View style={{flex:1,alignItems:'center',flexDirection:'row',top:window.height-138,borderTopWidth:0,borderTopColor:'#dddddd',padding:32,backgroundColor:'#fc004f'}}>
+        <View style={{flex:1,alignItems:'center',flexDirection:'row',top:window.height-136,borderTopWidth:0,borderTopColor:'#dddddd',padding:32,backgroundColor:'#fc004f'}}>
           
           <TouchableOpacity underlayColor="#333" onPress = {() => this.showPayMode()} style={{flex:1}}>
           <Image
-                style={{width:32, height:32,opacity:1.0,marginLeft:10}}
+                style={{width:24, height:24,opacity:1.0,marginLeft:10}}
                 source = {require('../../assets/icons/trans.png')}
           />
           </TouchableOpacity>
 
           <TouchableOpacity underlayColor="#333" onPress = {() => this.showTransactionMode()} style={{flex:1}}>
           <Image
-                style={{width:40, height:40,opacity:1.0,margin:18}}
+                style={{width:32, height:32,opacity:1.0,margin:18}}
                 source = {require('../../assets/icons/invoice.png')}
           />
           </TouchableOpacity>                 
           
           <TouchableOpacity underlayColor="#333" onPress = {() => this.showPayMode()} style={{flex:1}}>
           <Image
-                style={{width:32, height:32,opacity:1.0,margin:18}}
+                style={{width:24, height:24,opacity:1.0,margin:18}}
                 source = {require('../../assets/icons/trans.png')}
           />
           </TouchableOpacity>  
 
-          <TouchableOpacity underlayColor="#333" onPress = {() => this.showTransactionMode()} style={{flex:1}}>
+          <TouchableOpacity underlayColor="#333" onPress = {() => this.showProfileMode()} style={{flex:1}}>
           <Image
-                style={{width:40, height:40,opacity:1.0,margin:18}}
-                source = {require('../../assets/icons/invoice.png')}
+                style={{width:28, height:28,opacity:1.0,margin:18}}
+                source = {require('../../assets/icons/man-user.png')}
           />
           </TouchableOpacity>  
 

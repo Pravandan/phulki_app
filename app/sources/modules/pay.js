@@ -5,7 +5,8 @@ import {
   TouchableOpacity,
   PanResponder,
   Animated,
-  StyleSheet
+  StyleSheet,
+  Image
 } from 'react-native';
 
 
@@ -50,8 +51,8 @@ export class Pay extends Component<{}> {
        {!this.state.paymentDone&&
           <View>
 
-         <Text style={{top:72,fontSize:16,color:'#333',textAlign:'center'}}>Big Bazaar is requesting payment</Text>
-        <Text style={{top:80,fontSize:16,color:'#333',textAlign:'center'}}>Rs. 5000</Text>
+         <Text style={{top:28,fontSize:16,color:'#333',textAlign:'center'}}>Big Bazaar is requesting payment</Text>
+        <Text style={{top:38,fontSize:16,color:'#333',textAlign:'center'}}>Rs. 5000</Text>
 
 
           <View style={{flex:1,alignItems:'center'}}> 
@@ -77,7 +78,29 @@ export class Pay extends Component<{}> {
         </Animated.View>
         </View>
 
-   
+        <View style={{alignItems:'center'}}>
+              <View 
+
+
+
+                    style={{        
+                                    backgroundColor     : '#00BB6E',
+                                    width               : 60,
+                                    height              : 60,
+                                    borderRadius        : 30,
+                                    top:260,
+                                    zIndex:100,
+                    }}
+
+              >
+
+                  <Image
+                        style={{width:24, height:24,opacity:1.0,margin:18}}
+                        source = {require('../../../assets/icons/tick.png')}
+                   />
+
+              </View>   
+        </View>
 
         </View>
       
@@ -109,7 +132,7 @@ const styles = StyleSheet.create({
                         width               : 80,
                         height              : 80,
                         borderRadius        : 40,
-                        top:120,
+                        top:90,
 
   },
 });
