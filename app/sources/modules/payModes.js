@@ -12,8 +12,24 @@ export class PayModes extends Component<{}> {
   constructor(props){
     super(props);
     this.state={
-      
+      requestMode : false,
+      offlineMode : false,
     }
+  }
+
+  showRequestMode(){
+    this.setState({
+      requestMode : true,
+      offlineMode : false,
+    });
+    this.props.childCallBack();
+  }
+
+  showOffileMode(){
+    this.setState({
+      requestMode : false,
+      offlineMode : true,
+    })
   }
 
 
@@ -21,13 +37,16 @@ export class PayModes extends Component<{}> {
     return (
       <View style={{flex:1,top:window.height-186,alignItems:'stretch',flexDirection:'row'}}>  
       
-        <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#fc004f',alignItems:'center',paddingTop:16}}>
+      {!this.state.offlineMode &&
+        <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#fc004f',alignItems:'center',paddingTop:16}} onPress = {() => this.showRequestMode()}>
             <Text style={{fontSize:16,color:'white',fontWeight:'bold'}}>REQUEST</Text>
         </TouchableOpacity>
+      }
+      {!this.state.requestMode &&
          <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#fc004f',alignItems:'center',paddingTop:16}}>
             <Text style={{fontSize:16,color:'white',fontWeight:'bold'}}>GO OFFLINE</Text>
         </TouchableOpacity>
-
+      }
       </View>
     );
   }

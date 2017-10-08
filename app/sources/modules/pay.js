@@ -117,7 +117,7 @@ export class Pay extends Component<{}> {
             <Text style={{color:'#333'}}>Amount - Rs.5000</Text>
           </View>
        }
-
+      
       </View>
  
     );

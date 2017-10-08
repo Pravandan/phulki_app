@@ -15,18 +15,21 @@ import {Transaction} from './modules/transactions';
 import {Profile} from './modules/profile';
 import {Pay} from './modules/pay';
 import {PayModes} from './modules/payModes';
+import {RequestPayment} from './modules/requestPayment';
 
 export class Home extends Component<{}> {
   constructor(props){
     super(props);
     this.state={
       payMode : false,
-      transacttionMode : false,
+      transactionMode : false,
       profileMode : false,
+      requestMode : false,
     }
     this.showPayMode = this.showPayMode.bind(this);
     this.showTransactionMode = this.showTransactionMode.bind(this);
     this.showProfileMode = this.showProfileMode.bind(this);
+    this.showRequestMode = this.showRequestMode.bind(this);
   }
 
   static navigationOptions = {
@@ -39,6 +42,7 @@ export class Home extends Component<{}> {
       payMode : true,
       transactionMode : false,
       profileMode : false,
+      requestMode : false,
     });
   }
 
@@ -46,7 +50,8 @@ export class Home extends Component<{}> {
     this.setState({
       payMode : false,
       transactionMode : true,
-      profileMode : false
+      profileMode : false,
+      requestMode : false,
     });
   }
 
@@ -54,8 +59,15 @@ export class Home extends Component<{}> {
     this.setState({
       payMode : false,
       transactionMode : false,
-      profileMode : true
+      profileMode : true,
+      requestMode : false,
     })
+  }
+
+  showRequestMode(){
+    this.setState({
+       requestMode : true,
+    });
   }
 
 
@@ -76,8 +88,14 @@ top:0,borderBottomColor:'#dddddd',backgroundColor:'#fc004f',
 
         {this.state.payMode &&
           <View>
-          <Pay />
-          <PayModes />
+          {!this.state.requestMode &&
+            <Pay />
+          }
+          {this.state.requestMode &&
+            <RequestPayment />
+          }
+          
+          <PayModes childCallBack={this.showRequestMode} />
           </View>
         }
 
