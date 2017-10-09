@@ -22,17 +22,34 @@ export class Pay extends Component<{}> {
     this.panResponder = PanResponder.create({    //Step 2
         onStartShouldSetPanResponder : () => true,
         onPanResponderMove           : Animated.event([null,{ //Step 3
-            dx : this.state.pan.x,
+           
             dy : this.state.pan.y
         }]),
         onPanResponderRelease           : (e, gesture) => {
-        Animated.spring(            //Step 1
-            this.state.pan,         //Step 2
-            {toValue:{x:0,y:0}}     //Step 3
-        ).start();
-    }
+        if(this.isDropZone(gesture)){ //Step 1
+                this.setState({
+                    paymentDone : true //Step 3
+                });
+            }else{
+                Animated.spring(
+                    this.state.pan,
+                    {toValue:{x:0,y:0}}
+                ).start();
+            }
+        }
     });
   }
+
+  isDropZone(gesture){     //Step 2
+    var dz = this.state.dropZoneValues;
+    return gesture.moveY > dz.y && gesture.moveY > dz.y + dz.height;
+}
+
+  setDropZoneValues(event){      //Step 1
+    this.setState({
+        dropZoneValues : event.nativeEvent.layout
+    });
+}
 
 
   render() {
@@ -81,10 +98,10 @@ export class Pay extends Component<{}> {
         <View style={{alignItems:'center'}}>
               <View 
 
-
+                    onLayout={this.setDropZoneValues.bind(this)}
 
                     style={{        
-                                    backgroundColor     : '#00BB6E',
+                                    backgroundColor     : '#07b797',
                                     width               : 60,
                                     height              : 60,
                                     borderRadius        : 30,
@@ -117,7 +134,7 @@ export class Pay extends Component<{}> {
             <Text style={{color:'#333'}}>Amount - Rs.5000</Text>
           </View>
        }
-      
+
       </View>
  
     );
