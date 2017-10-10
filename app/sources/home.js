@@ -138,7 +138,7 @@ top:0,borderBottomColor:'#dddddd',backgroundColor:'#633ea5',
                 style={{width:28, height:28,opacity:1.0,marginLeft:18}}
                 source = {require('../../assets/icons/man-user.png')}
           />
-          <Text style={{color:'white',fontSize:8,paddingLeft:14,paddingTop:4}}>ACCOUNT</Text>
+          <Text style={{color:'white',fontSize:8,paddingLeft:18,paddingTop:4}}>ACCOUNT</Text>
           </TouchableOpacity>  
 
         </View>

@@ -36,6 +36,7 @@ export class Transaction extends Component<{}> {
     })
   }
 
+
   render() {
     return (
       <View>
@@ -60,7 +61,7 @@ export class Transaction extends Component<{}> {
       }
       {this.state.parReceipt &&
 
-          <Receipt />
+          <Receipt childCallBack={this.showAllTrans} />
 
       }
       </View>

@@ -14,6 +14,10 @@ export class Receipt extends Component<{}>{
 		super(props);
 	}
 
+	hideReceipt(){
+		this.props.childCallBack();
+	}
+
 	render(){
 		return(
 				<View style={{flex:1,alignItems : 'center',top:8}}>
@@ -29,8 +33,10 @@ export class Receipt extends Component<{}>{
 
 					<Text style={{fontSize:16,paddingTop:18,color:'#333'}}>- -- - -- - - -- - -- - -- - - -- - -- - -- - - --</Text>
 
-					<Text style={{fontSize:12,paddingTop:28,color:'#333',fontWeight:'bold'}}>Issued by Phulki Inc on behalf of</Text>
+					<Text style={{fontSize:12,paddingTop:8,color:'#333',fontWeight:'bold'}}>Issued by Phulki Inc on behalf of</Text>
 					<Text style={{fontSize:12,paddingTop:8,color:'#333',fontWeight:'bold'}}>Big Bazaar Ltd</Text>
+
+					<Text style={{fontSize:18,paddingTop:20,color:'#333', color:'red',fontWeight:'bold'}} onPress={() => this.hideReceipt()}>BACK</Text>
 
 				</View>
 			);
