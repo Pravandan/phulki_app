@@ -6,8 +6,14 @@ import {
   PanResponder,
   Animated,
   StyleSheet,
-  Image
+  Image,
+  Dimensions,
 } from 'react-native';
+
+import {Receipt} from './receipt';
+
+const window = Dimensions.get('window');
+
 
 
 export class Pay extends Component<{}> {
@@ -17,6 +23,7 @@ export class Pay extends Component<{}> {
         paymentDone : false,
         pan     : new Animated.ValueXY(),  //Step 1
         paymentSuccess : false,
+        seeReceipt : false,
     };
 
     this.panResponder = PanResponder.create({    //Step 2
@@ -38,6 +45,9 @@ export class Pay extends Component<{}> {
             }
         }
     });
+
+    this.showReceipt = this.showReceipt.bind(this);
+
   }
 
   isDropZone(gesture){     //Step 2
@@ -50,6 +60,12 @@ export class Pay extends Component<{}> {
         dropZoneValues : event.nativeEvent.layout
     });
 }
+
+  showReceipt(){
+    this.setState({
+      seeReceipt : true,
+    });
+  }
 
 
   render() {
@@ -93,6 +109,9 @@ export class Pay extends Component<{}> {
                     </Text>
         
         </Animated.View>
+
+
+
         </View>
 
         <View style={{alignItems:'center'}}>
@@ -105,7 +124,7 @@ export class Pay extends Component<{}> {
                                     width               : 60,
                                     height              : 60,
                                     borderRadius        : 30,
-                                    top:260,
+                                    top:240,
                                     zIndex:100,
                     }}
 
@@ -119,6 +138,11 @@ export class Pay extends Component<{}> {
               </View>   
         </View>
 
+        <View style={{flex:1,alignItems:'center',top:window.height-260}}>
+              <Text style={{color:'#d8081d',fontWeight:'bold',fontSize:16}}> X DECLINE </Text>
+        </View>
+
+        
         </View>
       
        }
@@ -127,12 +151,25 @@ export class Pay extends Component<{}> {
           <Text>Transaction Successfull</Text>
         </View>
        }
-       {this.state.paymentDone &&
+       {this.state.paymentDone && !this.state.seeReceipt &&
           <View style={{flex:1,alignItems:'center',top:124}}>
-            <Text style={{fontSize:24,color:'#12bc59',fontWeight:'bold'}}>SUCCESS</Text>
+            <Text style={{fontSize:18,color:'#12bc59',fontWeight:'bold'}}>TRANSACTION SUCCESSFULL</Text>
             <Text style={{fontSize:16}}>You have paid at Big Bazaar</Text>
             <Text style={{color:'#333'}}>Amount - Rs.5000</Text>
+            <Text style={{color:'#333',padding:10}}># e587 - 87459</Text>
+
+            <TouchableOpacity style={{flex:1,paddingBottom:32,backgroundColor:'#633ea5',alignItems:'center',borderRadius:4,paddingLeft:20,paddingRight:20,paddingTop:8,top:40}} onPress={() => this.showReceipt()}>
+              <Text style={{color:'#333',fontSize:18,paddingBottom:120,color:'white'}}>VIEW RECEIPT</Text>
+            </TouchableOpacity>
           </View>
+       }
+
+       {this.state.paymentDone && this.state.seeReceipt &&
+
+          <View>
+            <Receipt />
+          </View>
+
        }
 
       </View>
@@ -149,7 +186,7 @@ const styles = StyleSheet.create({
                         width               : 80,
                         height              : 80,
                         borderRadius        : 40,
-                        top:90,
+                        top:65,
 
   },
 });
