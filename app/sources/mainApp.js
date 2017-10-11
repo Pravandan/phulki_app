@@ -12,7 +12,7 @@ export class MainApp extends Component<{}> {
   constructor(props){
     super(props);
     this.state={
-      intro : false,
+      intro : true,
     }
     this.splashCallBack = this.splashCallBack.bind(this);
   }

@@ -38,13 +38,13 @@ export class PayModes extends Component<{}> {
       <View style={{flex:1,top:window.height-186,alignItems:'stretch',flexDirection:'row'}}>  
       
       {!this.state.offlineMode &&
-        <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#fc004f',alignItems:'center',paddingTop:16}} onPress = {() => this.showRequestMode()}>
-            <Text style={{fontSize:16,color:'white',fontWeight:'bold'}}>REQUEST</Text>
+        <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#fc004f',alignItems:'center',paddingTop:14}} onPress = {() => this.showRequestMode()}>
+            <Text style={{fontSize:16,color:'white',fontFamily: 'Montserrat-Regular'}}>REQUEST</Text>
         </TouchableOpacity>
       }
       {!this.state.requestMode &&
-         <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#fc004f',alignItems:'center',paddingTop:16}}>
-            <Text style={{fontSize:16,color:'white',fontWeight:'bold'}}>GO OFFLINE</Text>
+         <TouchableOpacity style={{flex:1,paddingBottom:38,backgroundColor:'#fc004f',alignItems:'center',paddingTop:14}}>
+            <Text style={{fontSize:16,color:'white',fontFamily: 'Montserrat-Regular'}}>GO OFFLINE</Text>
         </TouchableOpacity>
       }
       </View>

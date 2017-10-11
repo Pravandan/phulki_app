@@ -84,8 +84,8 @@ export class Pay extends Component<{}> {
        {!this.state.paymentDone&&
           <View>
 
-         <Text style={{top:28,fontSize:16,color:'#333',textAlign:'center'}}>Big Bazaar is requesting payment</Text>
-        <Text style={{top:38,fontSize:16,color:'#333',textAlign:'center'}}>Rs. 5000</Text>
+         <Text style={{top:28,fontSize:16,color:'#333',textAlign:'center',fontFamily: 'Montserrat-Regular'}}>Big Bazaar is requesting payment</Text>
+        <Text style={{top:38,fontSize:16,color:'#333',textAlign:'center',fontFamily: 'Montserrat-Regular'}}>Rs. 5000</Text>
 
 
           <View style={{flex:1,alignItems:'center'}}> 
@@ -101,7 +101,8 @@ export class Pay extends Component<{}> {
                                   fontSize:18,
                                   textAlign   : 'center',
                                   color       : '#fff'
-                                  ,fontWeight:'bold'
+                                  ,
+                                 fontFamily: 'Montserrat-Regular'
                     }}>
 
                         PAY
@@ -138,8 +139,8 @@ export class Pay extends Component<{}> {
               </View>   
         </View>
 
-        <View style={{flex:1,alignItems:'center',top:window.height-260}}>
-              <Text style={{color:'#d8081d',fontWeight:'bold',fontSize:16}}> X DECLINE </Text>
+        <View style={{flex:1,alignItems:'center',top:window.height-270}}>
+              <Text style={{color:'#d8081d',fontSize:16,fontFamily: 'Montserrat-Regular'}}> X DECLINE </Text>
         </View>
 
         

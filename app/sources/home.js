@@ -77,7 +77,7 @@ export class Home extends Component<{}> {
         <View style={{flex:1,alignItems:'center',flexDirection:'row',   justifyContent:'center',
 top:0,borderBottomColor:'#dddddd',backgroundColor:'#633ea5',
     borderBottomWidth:2,padding:24,width:window.width}}>
-          <Text style={{fontSize:20,color:'white'}}>PHULKI</Text>
+          <Text style={{fontSize:20,color:'white',fontFamily: 'Montserrat-Regular'}}>PHULKI</Text>
         </View>
 
         {this.state.transactionMode &&
@@ -114,7 +114,7 @@ top:0,borderBottomColor:'#dddddd',backgroundColor:'#633ea5',
                 style={{width:24, height:24,opacity:1.0,marginLeft:10}}
                 source = {require('../../assets/icons/trans.png')}
           />
-          <Text style={{color:'white',fontSize:8,paddingLeft:11,paddingTop:4}}>PAY</Text>
+          <Text style={{color:'white',fontSize:8,paddingLeft:11,paddingTop:4,fontFamily: 'Montserrat-Regular'}}>PAY</Text>
           </TouchableOpacity>
 
           <TouchableOpacity underlayColor="#333" onPress = {() => this.showTransactionMode()} style={{flex:1}}>
@@ -122,7 +122,7 @@ top:0,borderBottomColor:'#dddddd',backgroundColor:'#633ea5',
                 style={{width:32, height:32,opacity:1.0,marginLeft:18}}
                 source = {require('../../assets/icons/invoice.png')}
           />
-          <Text style={{color:'white',fontSize:8,paddingLeft:0,paddingTop:4}}>TRANSACTIONS</Text>
+          <Text style={{color:'white',fontSize:8,paddingLeft:0,paddingTop:4,fontFamily: 'Montserrat-Regular'}}>TRANSACTIONS</Text>
           </TouchableOpacity>                 
           
           <TouchableOpacity underlayColor="#333" onPress = {() => this.showPayMode()} style={{flex:1}}>
@@ -130,7 +130,7 @@ top:0,borderBottomColor:'#dddddd',backgroundColor:'#633ea5',
                 style={{width:24, height:24,opacity:1.0,marginLeft:18}}
                 source = {require('../../assets/icons/trans.png')}
           />
-          <Text style={{color:'white',fontSize:8,paddingLeft:20,paddingTop:4}}>PAY</Text>
+          <Text style={{color:'white',fontSize:8,paddingLeft:20,paddingTop:4,fontFamily: 'Montserrat-Regular'}}>PAY</Text>
           </TouchableOpacity>  
 
           <TouchableOpacity underlayColor="#333" onPress = {() => this.showProfileMode()} style={{flex:1}}>
@@ -138,7 +138,7 @@ top:0,borderBottomColor:'#dddddd',backgroundColor:'#633ea5',
                 style={{width:28, height:28,opacity:1.0,marginLeft:18}}
                 source = {require('../../assets/icons/man-user.png')}
           />
-          <Text style={{color:'white',fontSize:8,paddingLeft:18,paddingTop:4}}>ACCOUNT</Text>
+          <Text style={{color:'white',fontSize:8,paddingLeft:18,paddingTop:4,fontFamily: 'Montserrat-Regular'}}>ACCOUNT</Text>
           </TouchableOpacity>  
 
         </View>

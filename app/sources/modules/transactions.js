@@ -46,16 +46,16 @@ export class Transaction extends Component<{}> {
               No new Transactions
             </Text>
             <View style={{backgroundColor:'#fc004f',paddingTop:44,paddingBottom:40,top:56,borderRadius:8,width:window.width-20,borderWidth:2,borderColor:'#dddddd'}}>
-                <Text style={{position:'absolute',fontSize:16,top:14,paddingLeft:16,color:'white',fontWeight:'bold'}}>Big Bazaar</Text>
-                <Text style={{position:'absolute',fontSize:14,top:48,paddingLeft:16,color:'white',fontWeight:'bold'}} onPress={() => this.showParReceipt()}>View Receipt</Text>
+                <Text style={{position:'absolute',fontSize:16,top:14,paddingLeft:16,color:'white',fontFamily: 'Montserrat-Regular'}}>Big Bazaar</Text>
+                <Text style={{position:'absolute',fontSize:14,top:48,paddingLeft:16,color:'white',fontFamily: 'Montserrat-Regular'}} onPress={() => this.showParReceipt()}>View Receipt</Text>
             </View>
              <View style={{flex:1,backgroundColor:'#401f80',padding:44,top:56,borderRadius:8,width:window.width-20,borderWidth:2,borderColor:'#dddddd',marginTop:10}}>
-               <Text style={{position:'absolute',fontSize:16,top:14,paddingLeft:16,color:'white',fontWeight:'bold'}}>Zomato Inc</Text>
-              <Text style={{position:'absolute',fontSize:14,top:48,paddingLeft:16,color:'white',fontWeight:'bold'}} onPress={() => this.showParReceipt()}>View Receipt</Text>
+               <Text style={{position:'absolute',fontSize:16,top:14,paddingLeft:16,color:'white',fontFamily: 'Montserrat-Regular'}}>Zomato Inc</Text>
+              <Text style={{position:'absolute',fontSize:14,top:48,paddingLeft:16,color:'white',fontFamily: 'Montserrat-Regular'}} onPress={() => this.showParReceipt()}>View Receipt</Text>
             </View>
              <View style={{flex:1,backgroundColor:'#fc004f',padding:44,top:56,borderRadius:8,width:window.width-20,borderWidth:2,borderColor:'#dddddd',marginTop:10}}>
-                <Text style={{position:'absolute',fontSize:16,top:14,paddingLeft:16,color:'white',fontWeight:'bold'}}>OLA Inc</Text>
-                <Text style={{position:'absolute',fontSize:14,top:48,paddingLeft:16,color:'white',fontWeight:'bold'}} onPress={() => this.showParReceipt()}>View Receipt</Text>
+                <Text style={{position:'absolute',fontSize:16,top:14,paddingLeft:16,color:'white',fontFamily: 'Montserrat-Regular'}}>OLA Inc</Text>
+                <Text style={{position:'absolute',fontSize:14,top:48,paddingLeft:16,color:'white',fontFamily: 'Montserrat-Regular'}} onPress={() => this.showParReceipt()}>View Receipt</Text>
             </View>
           </View>
       }
